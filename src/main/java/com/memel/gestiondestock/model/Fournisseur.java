@@ -6,12 +6,17 @@ import javax.persistence.*;
 import java.util.List;
 
 @Data
+@Setter
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "fournisseur")
-public class Fournisseur extends AbstractEntity {
+public class Fournisseur{
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
     @Column(name = "nom")
     private String nom;

@@ -5,12 +5,16 @@ import lombok.*;
 import javax.persistence.*;
 
 @Data
+@Setter
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(callSuper = true)
-@Entity
 @Table(name = "roles")
-public class Roles extends AbstractEntity{
+public class Roles{
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
     @Column(name = "rolename")
     private String roleName;

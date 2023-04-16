@@ -6,12 +6,17 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Data
+@Setter
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "lignecommandeclient")
-public class LigneCommandeClient extends AbstractEntity {
+public class LigneCommandeClient{
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
     @ManyToOne
     @JoinColumn(name = "idarticle")

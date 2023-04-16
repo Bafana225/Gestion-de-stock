@@ -8,12 +8,17 @@ import java.time.Instant;
 import java.util.List;
 
 @Data
+@Setter
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(callSuper = true)
 @Entity
 @Table (name = "commandefournisseur")
-public class CommandeFournisseur extends AbstractEntity{
+public class CommandeFournisseur{
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
     @Column(name = "code")
     private String code;

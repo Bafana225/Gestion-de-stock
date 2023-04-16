@@ -7,12 +7,17 @@ import java.time.Instant;
 import java.util.List;
 
 @Data
+@Setter
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "utilisateur")
-public class Utilisateur extends AbstractEntity{
+public class Utilisateur{
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
     @Column(name = "nom")
     private String nom;
